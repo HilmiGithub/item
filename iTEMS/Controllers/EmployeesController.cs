@@ -96,7 +96,7 @@ namespace iTEMS.Controllers
             if (ModelState.IsValid)
             {
                 employee.CreatedOn = DateTime.Now;
-                employee.ModifiedOn = DateTime.Now;
+                
                 _context.Add(employee);
                 await _context.SaveChangesAsync();
 
@@ -142,7 +142,7 @@ namespace iTEMS.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,EmpNo,FirstName,LastName,PhoneNumber,Email,Country,DateofBirth,Address,Department,Designation,CreatedBy,CreatedOn,ModifiedBy,ModifiedOn")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,EmpNo,UserName,FirstName,LastName,PhoneNumber,Email,Country,DateofBirth,Address,Department,Designation,CreatedOn,ModifiedBy,ModifiedOn")] Employee employee)
         {
             if (id != employee.Id)
             {
