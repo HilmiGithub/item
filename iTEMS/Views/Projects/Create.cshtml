@@ -1,0 +1,101 @@
+﻿@model iTEMS.Models.Project
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Project</h4>
+<hr />
+<div class="row">
+    <form asp-action="Create" class="col-md-12">
+        <!-- Form wrapping both columns -->
+        <div class="row">
+            <div class="col-md-6">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Project Title</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">Description</label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StartDate" class="control-label">Start Date</label>
+                    <input asp-for="StartDate" class="form-control" />
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EndDate" class="control-label">End Date</label>
+                    <input asp-for="EndDate" class="form-control" />
+                    <span asp-validation-for="EndDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Status" class="control-label">Status</label>
+                    <select asp-for="Status" class="form-control" asp-items="ViewBag.StatusList"></select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="PIC" class="control-label">PIC</label>
+                    <input asp-for="PIC" class="form-control" />
+                    <span asp-validation-for="PIC" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Budget" class="control-label">Budget</label>
+                    <input asp-for="Budget" class="form-control" />
+                    <span asp-validation-for="Budget" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Update" class="control-label">Update</label>
+                    <input asp-for="Update" class="form-control" />
+                    <span asp-validation-for="Update" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Blocker" class="control-label">Blocker</label>
+                    <input asp-for="Blocker" class="form-control" />
+                    <span asp-validation-for="Blocker" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CreatedBy" class="control-label" style="display: none;"></label>
+                    <input asp-for="CreatedBy" class="form-control" style="display: none;" />
+                    <span asp-validation-for="CreatedBy" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CreatedOn" class="control-label" style="display: none;"></label>
+                    <input asp-for="CreatedOn" class="form-control" style="display: none;" />
+                    <span asp-validation-for="CreatedOn" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ModifiedBy" class="control-label">Modified By</label>
+                    <input asp-for="ModifiedBy" class="form-control" />
+                    <span asp-validation-for="ModifiedBy" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ModifiedOn" class="control-label">Modified On</label>
+                    <input asp-for="ModifiedOn" class="form-control" />
+                    <span asp-validation-for="ModifiedOn" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-12">
+                    <!-- Full width submit button -->
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,27 @@
+﻿@model List<iTEMS.ViewModels.AssignRoleViewModel>
+
+@{
+    ViewData["Title"] = "User Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>User Roles</h1>
+
+<table id="example1" class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Current Role</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var userRole in Model)
+        {
+            <tr>
+                <td>@userRole.UserName</td>
+                <td>@userRole.RoleName</td>             
+            </tr>
+        }
+    </tbody>
+</table>
