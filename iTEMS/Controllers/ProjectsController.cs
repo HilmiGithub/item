@@ -66,12 +66,18 @@ namespace iTEMS.Controllers
         {
             if (ModelState.IsValid)
             {
-                project.Status = ProjectStatus.Planning; // Set default status here
+
+                // Set default status
+                project.Status = ProjectStatus.Planning;
+
                 try
                 {
+
                     var currentUser = await _userManager.GetUserAsync(User);
                     project.CreatedBy = currentUser.UserName;
-                    project.CreatedOn = DateTime.Now;
+                    project.CreatedOn = DateTime.Now; // Set the creation date here
+                    project.ModifiedBy = currentUser.UserName;
+                    project.ModifiedOn = DateTime.Now;
                     _context.Add(project);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
@@ -119,7 +125,7 @@ namespace iTEMS.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,StartDate,EndDate,Status,PIC,Budget,Update,Blocker,CreatedBy,CreatedOn,ModifiedBy,ModifiedOn")] Project project)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,StartDate,EndDate,Status,PIC,Budget,Update,Blocker,,CreatedBy,CreatedOn,ModifiedBy,ModifiedOn")] Project project)
         {
             if (id != project.Id)
             {
@@ -130,6 +136,13 @@ namespace iTEMS.Controllers
             {
                 try
                 {
+                    var currentUser = await _userManager.GetUserAsync(User);
+
+                    // Assign the current user's username to the ModifiedBy property
+                    project.ModifiedBy = currentUser.UserName;
+
+                    // Set the ModifiedOn property to the current date and time
+                    project.ModifiedOn = DateTime.Now;
                     _context.Update(project);
                     await _context.SaveChangesAsync();
                 }
