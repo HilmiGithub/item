@@ -70,6 +70,17 @@ namespace iTEMS.Models
         // public ICollection<TaskItem> Dependencies { get; set; }
         // public ICollection<TaskItem> RelatedTasks { get; set; }
 
+        public enum TaskTrackerStatus
+        {
+            Planning,
+            Pending,
+            Completed,
+            Delayed,
+            Blocked
+
+        }
+
+
 
     }
 }
