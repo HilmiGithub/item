@@ -218,6 +218,46 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Arvindh/Documents/GitHub/iTEMS/iTEMS/Views/InAppNotifications/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5BcHBOb3RpZmljYXRpb25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arvindh/Documents/GitHub/iTEMS/iTEMS/Views/InAppNotifications/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5BcHBOb3RpZmljYXRpb25zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arvindh/Documents/GitHub/iTEMS/iTEMS/Views/InAppNotifications/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5BcHBOb3RpZmljYXRpb25zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arvindh/Documents/GitHub/iTEMS/iTEMS/Views/InAppNotifications/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5BcHBOb3RpZmljYXRpb25zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arvindh/Documents/GitHub/iTEMS/iTEMS/Views/InAppNotifications/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5BcHBOb3RpZmljYXRpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arvindh/Documents/GitHub/iTEMS/iTEMS/Views/Notifications/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arvindh/Documents/GitHub/iTEMS/iTEMS/Views/Notifications/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arvindh/Documents/GitHub/iTEMS/iTEMS/Views/Notifications/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arvindh/Documents/GitHub/iTEMS/iTEMS/Views/Notifications/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arvindh/Documents/GitHub/iTEMS/iTEMS/Views/Notifications/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Arvindh/Documents/GitHub/iTEMS/iTEMS/Views/Projects/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
