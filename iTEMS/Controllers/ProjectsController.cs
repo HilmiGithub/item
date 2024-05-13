@@ -13,12 +13,12 @@ using Microsoft.AspNetCore.Identity;
 namespace iTEMS.Controllers
 {
     [Authorize]
-    public class ProjectsController : Controller
+    public class ProjectsController : BaseController
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
 
-        public ProjectsController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public ProjectsController(ApplicationDbContext context, UserManager<IdentityUser> userManager) : base(context)
         {
             _context = context;
             _userManager = userManager;
@@ -27,12 +27,14 @@ namespace iTEMS.Controllers
         // GET: Projects
         public async Task<IActionResult> Index()
         {
+            await SetNotificationsInViewBag();
             return View(await _context.Project.ToListAsync());
         }
 
         // GET: Projects/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            await SetNotificationsInViewBag();
             if (id == null)
             {
                 return NotFound();
@@ -51,6 +53,7 @@ namespace iTEMS.Controllers
         // GET: Projects/Create
         public async Task<IActionResult> Create()
         {
+            await SetNotificationsInViewBag();
             var currentUser = await _userManager.GetUserAsync(User);
             var employee = await _context.Employees.FirstOrDefaultAsync(e => e.Email == currentUser.UserName);
             ViewData["StatusList"] = new SelectList(Enum.GetValues(typeof(ProjectStatus)));
@@ -64,6 +67,7 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Description,StartDate,EndDate,Status,PIC,Budget,Update,Blocker,CreatedBy,CreatedOn,ModifiedBy,ModifiedOn")] Project project)
         {
+            await SetNotificationsInViewBag();
             if (ModelState.IsValid)
             {
 
@@ -106,6 +110,7 @@ namespace iTEMS.Controllers
         // GET: Projects/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            await SetNotificationsInViewBag();
             if (id == null)
             {
                 return NotFound();
@@ -127,6 +132,7 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,StartDate,EndDate,Status,PIC,Budget,Update,Blocker,,CreatedBy,CreatedOn,ModifiedBy,ModifiedOn")] Project project)
         {
+            await SetNotificationsInViewBag();
             if (id != project.Id)
             {
                 return NotFound();
@@ -166,6 +172,7 @@ namespace iTEMS.Controllers
         // GET: Projects/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            await SetNotificationsInViewBag();
             if (id == null)
             {
                 return NotFound();
@@ -186,6 +193,7 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            await SetNotificationsInViewBag();
             var project = await _context.Project.FindAsync(id);
             if (project != null)
             {

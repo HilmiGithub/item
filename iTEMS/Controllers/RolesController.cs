@@ -13,14 +13,14 @@ using Microsoft.EntityFrameworkCore;
 namespace iTEMS.Controllers
 {
     [Authorize]
-    public class RolesController : Controller
+    public class RolesController : BaseController
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ApplicationDbContext _context;
 
-        public RolesController(ApplicationDbContext context, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager)
+        public RolesController(ApplicationDbContext context, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager) : base(context)
         {
             _roleManager = roleManager;
             _userManager = userManager;
@@ -30,13 +30,15 @@ namespace iTEMS.Controllers
 
         public async Task<ActionResult> Index()
         {
+            await SetNotificationsInViewBag();
             var roles = await _context.Roles.ToListAsync();
             return View(roles);
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            await SetNotificationsInViewBag();
             return View();
         }
 
@@ -44,6 +46,7 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(RolesViewModel model)
         {
+            await SetNotificationsInViewBag();
             if (ModelState.IsValid)
             {
                 // Create a new IdentityRole object with the provided role name
@@ -69,6 +72,7 @@ namespace iTEMS.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
+            await SetNotificationsInViewBag();
             if (id == null)
             {
                 return NotFound();
@@ -94,6 +98,7 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, RolesViewModel model)
         {
+            await SetNotificationsInViewBag();
             if (id != model.RoleId)
             {
                 return NotFound();
@@ -143,6 +148,7 @@ namespace iTEMS.Controllers
         // GET: Roles/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
+            await SetNotificationsInViewBag();
             if (id == null)
             {
                 return NotFound();
@@ -168,6 +174,7 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
+            await SetNotificationsInViewBag();
             var role = await _roleManager.FindByIdAsync(id);
             if (role == null)
             {
@@ -196,6 +203,7 @@ namespace iTEMS.Controllers
         [HttpGet]
         public async Task<IActionResult> AssignRole(string userId)
         {
+            await SetNotificationsInViewBag();
             if (userId == null)
             {
                 return NotFound();
@@ -235,6 +243,7 @@ namespace iTEMS.Controllers
         // AssignRole method
         public async Task<IActionResult> AssignRole(AssignRoleViewModel model)
         {
+            await SetNotificationsInViewBag();
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByIdAsync(model.UserId);
@@ -273,6 +282,7 @@ namespace iTEMS.Controllers
 
         public IActionResult UserRoles()
         {
+
             // Query the AspNetUserRoles table to fetch user-role associations
             var userRoles = _context.UserRoles.ToList();
 
@@ -310,6 +320,7 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangeUserRole(string userId, string selectedRoleId)
         {
+            await SetNotificationsInViewBag();
             // Log the received user ID and role ID
             Console.WriteLine($"Received user ID: {userId}, role ID: {selectedRoleId}");
 

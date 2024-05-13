@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,13 +16,13 @@ using static iTEMS.Models.TaskTracker;
 namespace iTEMS.Controllers
 {
     [Authorize]
-    public class TaskTrackersController : Controller
+    public class TaskTrackersController : BaseController
     {
         private readonly ApplicationDbContext _context;
         private readonly ILogger<TaskTrackersController> _logger; // Injected logger
         private readonly UserManager<IdentityUser> _userManager;
 
-        public TaskTrackersController(ApplicationDbContext context, ILogger<TaskTrackersController> logger, UserManager<IdentityUser> userManager)
+        public TaskTrackersController(ApplicationDbContext context, ILogger<TaskTrackersController> logger, UserManager<IdentityUser> userManager) : base(context)
         {
             _context = context;
             _logger = logger;
@@ -30,6 +31,7 @@ namespace iTEMS.Controllers
 
         private async Task<List<InAppNotification>> GetNotificationsForCurrentUser(string userName)
         {
+
             return await _context.InAppNotifications
                 .Where(n => n.UserName == userName)
                 .OrderByDescending(n => n.Timestamp)
@@ -39,9 +41,12 @@ namespace iTEMS.Controllers
         // GET: TaskTrackers
         public async Task<IActionResult> Index()
         {
+
+            await SetNotificationsInViewBag();
             var applicationDbContext = _context.TaskTrackers
                 .Include(t => t.Project)
                 .Include(t => t.Employee); // Include the Employee navigation property
+
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -49,6 +54,7 @@ namespace iTEMS.Controllers
         // GET: TaskTrackers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            await SetNotificationsInViewBag();
             if (id == null)
             {
                 return NotFound();
@@ -66,11 +72,13 @@ namespace iTEMS.Controllers
         }
 
         // GET: TaskTrackers/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            await SetNotificationsInViewBag();
             ViewData["ProjectId"] = new SelectList(_context.Project, "Id", "Name");
             ViewData["AssignedTo"] = new SelectList(_context.Employees, "Id", "UserName");
             ViewData["StatusList"] = new SelectList(Enum.GetValues(typeof(TaskTrackerStatus)));
+
             return View();
         }
 
@@ -81,16 +89,17 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Description,AssignedTo,Status,Priority,DueDate,StartDate,EstimatedTime,ActualTime,Tags,Attachments,Comments,ProjectId,CreatedBy,CreatedOn,ModifiedBy,ModifiedOn")] TaskTracker taskTracker)
         {
+            await SetNotificationsInViewBag();
             try
             {
-                    var currentUser = await _userManager.GetUserAsync(User);
-                    var assignedUser = await _context.Employees.FindAsync(taskTracker.AssignedTo);
-                    taskTracker.CreatedBy = currentUser.UserName;
-                    taskTracker.CreatedOn = DateTime.Now; // Set the creation date here
-                    taskTracker.ModifiedBy = currentUser.UserName;
-                    taskTracker.ModifiedOn = DateTime.Now;
-                    _context.Add(taskTracker);
-                    await _context.SaveChangesAsync();
+                var currentUser = await _userManager.GetUserAsync(User);
+                var assignedUser = await _context.Employees.FindAsync(taskTracker.AssignedTo);
+                taskTracker.CreatedBy = currentUser.UserName;
+                taskTracker.CreatedOn = DateTime.Now; // Set the creation date here
+                taskTracker.ModifiedBy = currentUser.UserName;
+                taskTracker.ModifiedOn = DateTime.Now;
+                _context.Add(taskTracker);
+                await _context.SaveChangesAsync();
 
                 if (assignedUser != null)
                 {
@@ -130,7 +139,7 @@ namespace iTEMS.Controllers
             // If ModelState is invalid or an exception occurred, return to the Create view with error messages
             ViewData["ProjectId"] = new SelectList(_context.Project, "Id", "Name", taskTracker.ProjectId);
             ViewData["AssignedTo"] = new SelectList(_context.Employees, "Id", "UserName", taskTracker.Employee);
-            ViewData["StatusList"] = new SelectList(Enum.GetValues(typeof(TaskTrackerStatus)),taskTracker.Status);
+            ViewData["StatusList"] = new SelectList(Enum.GetValues(typeof(TaskTrackerStatus)), taskTracker.Status);
             return View(taskTracker);
         }
 
@@ -138,6 +147,7 @@ namespace iTEMS.Controllers
         // GET: TaskTrackers/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            await SetNotificationsInViewBag();
             if (id == null)
             {
                 return NotFound();
@@ -165,39 +175,40 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,AssignedTo,Status,Priority,DueDate,StartDate,EstimatedTime,ActualTime,Tags,Attachments,Comments,ProjectId,CreatedBy,CreatedOn,ModifiedBy,ModifiedOn")] TaskTracker taskTracker)
         {
+            await SetNotificationsInViewBag();
             if (id != taskTracker.Id)
             {
                 return NotFound();
             }
 
-                try
+            try
+            {
+                var currentUser = await _userManager.GetUserAsync(User);
+
+                // Assign the current user's username to the ModifiedBy property
+                taskTracker.ModifiedBy = currentUser.UserName;
+
+                // Set the ModifiedOn property to the current date and time
+                taskTracker.ModifiedOn = DateTime.Now;
+
+                _context.Update(taskTracker);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!TaskTrackerExists(taskTracker.Id))
                 {
-                    var currentUser = await _userManager.GetUserAsync(User);
-
-                    // Assign the current user's username to the ModifiedBy property
-                    taskTracker.ModifiedBy = currentUser.UserName;
-
-                    // Set the ModifiedOn property to the current date and time
-                    taskTracker.ModifiedOn = DateTime.Now;
-
-                    _context.Update(taskTracker);
-                    await _context.SaveChangesAsync();
-
-                    return RedirectToAction(nameof(Index));
+                    ModelState.AddModelError("", "An error occurred while saving the task. Task does not exist.");
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+                else
                 {
-                    if (!TaskTrackerExists(taskTracker.Id))
-                    {   
-                        ModelState.AddModelError("", "An error occurred while saving the task. Task does not exist.");
-                        return NotFound();
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "An error occurred while saving the task.");
-                        throw;
-                    }
+                    ModelState.AddModelError("", "An error occurred while saving the task.");
+                    throw;
                 }
+            }
             // Handle other specific exceptions if needed
 
 
@@ -227,6 +238,7 @@ namespace iTEMS.Controllers
         // GET: TaskTrackers/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            await SetNotificationsInViewBag();
             if (id == null)
             {
                 return NotFound();
@@ -248,6 +260,7 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            await SetNotificationsInViewBag();
             var taskTracker = await _context.TaskTrackers.FindAsync(id);
             if (taskTracker != null)
             {
