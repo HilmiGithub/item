@@ -73,13 +73,17 @@
                         {
                             @foreach (var notification in ViewBag.Notifications)
                             {
-                                <a href="#" class="dropdown-item">
-                                    <div style="word-wrap: break-word;">
-                                        <!-- Apply word wrapping -->
-                                        <i class="fas fa-envelope mr-2"></i> @notification.Message
-                                    </div>
-                                    <span class="float-right text-muted text-sm">@notification.Timestamp.ToString("MMM dd, yyyy")</span>
-                                </a>
+                                // Check if the notification belongs to the current user
+                                if (notification.UserName == User.Identity.Name)
+                                {
+                                    <a href="#" class="dropdown-item">
+                                        <div style="word-wrap: break-word;">
+                                            <!-- Apply word wrapping -->
+                                            <i class="fas fa-envelope mr-2"></i> @notification.Message
+                                        </div>
+                                        <span class="float-right text-muted text-sm">@notification.Timestamp.ToString("MMM dd, yyyy")</span>
+                                    </a>
+                                }
                             }
                         }
                         else
@@ -89,6 +93,7 @@
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
                 </li>
+
                 @if (User.Identity?.IsAuthenticated ?? false)
                 {
                     <li class="nav-item">
