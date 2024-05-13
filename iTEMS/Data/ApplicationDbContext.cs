@@ -13,7 +13,11 @@ namespace iTEMS.Data
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<TaskTracker> TaskTrackers { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<InAppNotification> InAppNotifications { get; set; }
         public DbSet<iTEMS.Models.Project> Project { get; set; } = default!;
+        public DbSet<iTEMS.Models.InAppNotification> InAppNotification { get; set; } = default!;
+
 
     }
 }
