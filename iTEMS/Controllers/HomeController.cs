@@ -11,13 +11,14 @@ using iTEMS.Data;
 namespace iTEMS.Controllers
 {
     [Authorize]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
 
         public HomeController(ILogger<HomeController> logger, UserManager<IdentityUser> userManager, ApplicationDbContext context)
+            : base(context)
         {
             _logger = logger;
             _userManager = userManager;
@@ -45,6 +46,8 @@ namespace iTEMS.Controllers
                     ViewBag.DisplayName = "Test";
                 }
 
+                // Call the SetNotificationsInViewBag method from the base controller to set notifications
+                await SetNotificationsInViewBag();
                 return View();
         }
 

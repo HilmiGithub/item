@@ -14,12 +14,12 @@ using iTEMS.ViewModels;
 namespace iTEMS.Controllers
 {
     [Authorize]
-    public class EmployeesController : Controller
+    public class EmployeesController : BaseController
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
 
-        public EmployeesController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public EmployeesController(ApplicationDbContext context, UserManager<IdentityUser> userManager) : base(context)
         {
             _context = context;
             _userManager = userManager;
@@ -45,6 +45,7 @@ namespace iTEMS.Controllers
                 // If no matching employee record is found, display the email
                 ViewBag.DisplayName = "Test";
             }
+            await SetNotificationsInViewBag();
             return View(await _context.Employees.ToListAsync());
         }
 
@@ -52,6 +53,7 @@ namespace iTEMS.Controllers
         // GET: Employees/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            await SetNotificationsInViewBag();
             if (id == null)
             {
                 return NotFound();
@@ -70,6 +72,7 @@ namespace iTEMS.Controllers
         // GET: Employees/Create
         public async Task<IActionResult> Create()
         {
+            await SetNotificationsInViewBag();
             var currentUser = await _userManager.GetUserAsync(User);
             var employee = await _context.Employees.FirstOrDefaultAsync(e => e.Email == currentUser.UserName);
 
@@ -93,6 +96,7 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,EmpNo,FirstName,LastName,PhoneNumber,Email,Country,DateofBirth,Address,Department,Designation,CreatedBy,CreatedOn,ModifiedBy,ModifiedOn")] Employee employee)
         {
+            await SetNotificationsInViewBag();
             if (ModelState.IsValid)
             {
                 employee.CreatedOn = DateTime.Now;
@@ -124,6 +128,7 @@ namespace iTEMS.Controllers
         // GET: Employees/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            await SetNotificationsInViewBag();
             if (id == null)
             {
                 return NotFound();
@@ -144,6 +149,7 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,EmpNo,UserName,FirstName,LastName,PhoneNumber,Email,Country,DateofBirth,Address,Department,Designation,CreatedOn,ModifiedBy,ModifiedOn")] Employee employee)
         {
+            await SetNotificationsInViewBag();
             if (id != employee.Id)
             {
                 return NotFound();
@@ -186,6 +192,7 @@ namespace iTEMS.Controllers
         // GET: Employees/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            await SetNotificationsInViewBag();
             if (id == null)
             {
                 return NotFound();
@@ -206,6 +213,7 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            await SetNotificationsInViewBag();
             var employee = await _context.Employees.FindAsync(id);
             if (employee != null)
             {
@@ -220,6 +228,7 @@ namespace iTEMS.Controllers
         // GET: Employees/AssignRole
         public async Task<IActionResult> AssignRole(string userId = null)
         {
+            await SetNotificationsInViewBag();
             if (userId != null)
             {
                 var user = await _userManager.FindByIdAsync(userId);
@@ -263,6 +272,7 @@ namespace iTEMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AssignRole(string userId, string roleName)
         {
+            await SetNotificationsInViewBag();
             if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(roleName))
             {
                 return BadRequest("Invalid user ID or role name.");

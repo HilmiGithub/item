@@ -61,24 +61,23 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
-@*                         @if (ViewBag.Notifications != null)
+                        @if (ViewBag.Notifications != null && ViewBag.Notifications.Count > 0)
                         {
-                            <span class="badge badge-warning navbar-badge">@ViewBag.Notifications.Count()</span>
+                            <span class="badge badge-warning navbar-badge">@ViewBag.Notifications.Count</span>
                         }
-                        else
-                        {
-                            <span class="badge badge-warning navbar-badge">0</span>
-                        } *@
                     </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="max-height: 300px; overflow-y: auto;">
                         <span class="dropdown-item dropdown-header">Notifications</span>
                         <div class="dropdown-divider"></div>
-                        @if (ViewBag.Notifications != null)
+                        @if (ViewBag.Notifications != null && ViewBag.Notifications.Count > 0)
                         {
                             @foreach (var notification in ViewBag.Notifications)
                             {
                                 <a href="#" class="dropdown-item">
-                                    <i class="fas fa-envelope mr-2"></i> @notification.Message
+                                    <div style="word-wrap: break-word;">
+                                        <!-- Apply word wrapping -->
+                                        <i class="fas fa-envelope mr-2"></i> @notification.Message
+                                    </div>
                                     <span class="float-right text-muted text-sm">@notification.Timestamp.ToString("MMM dd, yyyy")</span>
                                 </a>
                             }
@@ -90,7 +89,6 @@
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
                 </li>
-
                 @if (User.Identity?.IsAuthenticated ?? false)
                 {
                     <li class="nav-item">
