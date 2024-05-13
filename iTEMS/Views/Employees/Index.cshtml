@@ -36,10 +36,7 @@
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Designation)
-                        </th>
-                        <th>
-                            Actions
-                        </th>
+                        </th>                        
                         <th>
                             @Html.DisplayNameFor(model => model.DateofBirth)
                         </th>                     
@@ -48,6 +45,9 @@
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Country)
+                        </th>
+                        <th>
+                            Actions
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.CreatedOn)
@@ -83,12 +83,7 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Designation)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" class="btn btn-warning" title="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a> |
-                            <a asp-action="Details" class="btn btn-info" title="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
-                            <a asp-action="Delete" class="btn btn-danger" title="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
-                        </td>
+                        </td>                       
                         <td>
                             @Html.DisplayFor(modelItem => item.DateofBirth)
                         </td>                        
@@ -97,6 +92,11 @@
                         </td>
                         <td>    
                             @Html.DisplayFor(modelItem => item.Country)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" class="btn btn-warning" title="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a> |
+                            <a asp-action="Details" class="btn btn-info" title="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
+                            <a asp-action="Delete" class="btn btn-danger" title="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.CreatedOn)
