@@ -20,7 +20,6 @@ namespace iTEMS.Controllers
         }
 
         // GET: Notifications
-        // GET: Notifications
         public async Task<IActionResult> Index()
         {
             // Fetch all notifications
