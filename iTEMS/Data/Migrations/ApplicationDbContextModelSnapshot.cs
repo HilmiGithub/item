@@ -286,7 +286,7 @@ namespace iTEMS.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Employees", (string)null);
                 });
 
             modelBuilder.Entity("iTEMS.Models.InAppNotification", b =>
@@ -310,7 +310,7 @@ namespace iTEMS.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("InAppNotification");
+                    b.ToTable("InAppNotification", (string)null);
                 });
 
             modelBuilder.Entity("iTEMS.Models.Notification", b =>
@@ -344,7 +344,7 @@ namespace iTEMS.Data.Migrations
 
                     b.HasIndex("EmployeeId");
 
-                    b.ToTable("Notifications");
+                    b.ToTable("Notifications", (string)null);
                 });
 
             modelBuilder.Entity("iTEMS.Models.Project", b =>
@@ -400,7 +400,7 @@ namespace iTEMS.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Project");
+                    b.ToTable("Project", (string)null);
                 });
 
             modelBuilder.Entity("iTEMS.Models.TaskTracker", b =>
@@ -471,7 +471,7 @@ namespace iTEMS.Data.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("TaskTrackers");
+                    b.ToTable("TaskTrackers", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
