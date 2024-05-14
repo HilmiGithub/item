@@ -4,157 +4,442 @@
 @{
     ViewData["Title"] = "Dashboard";
 }
-
+<br />
+<br />
+<br />
 <h1>Dashboard</h1>
-<br />
-<div>
-    <h1>Projects Overview</h1>
-</div>
-<br />
-<div class="row">
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">Total Projects</div>
-            <div class="card-body">@Model.TotalProjects</div>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="d-flex justify-content-between align-items-center">
+                Projects Overview
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </h2>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">Projects in Planning Phase</div>
-            <div class="card-body">@Model.PlanningProjects</div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">Pending Projects</div>
-            <div class="card-body">@Model.PendingProjects</div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">Delayed Projects</div>
-            <div class="card-body">@Model.DelayedProjects</div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">Blocked Projects</div>
-            <div class="card-body">@Model.BlockedProjects</div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">Completed Projects</div>
-            <div class="card-body">@Model.CompletedProjects</div>
-        </div>
-    </div>
-</div>
-<br />
-<div>
-    <h1>Tasks Overview</h1>
-</div>
-<br />
-<div class="row mt-4">
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">Total Tasks</div>
-            <div class="card-body">@Model.TotalTasks</div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">Tasks in Planning Phase</div>
-            <div class="card-body">@Model.PlanningTasks</div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">Pending Tasks</div>
-            <div class="card-body">@Model.PendingTasks</div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">Delayed Tasks</div>
-            <div class="card-body">@Model.DelayedTasks</div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">Blocked Tasks</div>
-            <div class="card-body">@Model.BlockedTasks</div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">Completed Tasks</div>
-            <div class="card-body">@Model.CompletedTasks</div>
+        <div class="card-body">
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info elevation-1"><i class="fa-solid fa-bars-progress"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Projects</span>
+                            <span class="info-box-number">@Model.TotalProjects</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-teal elevation-1"><i class="fa-solid fa-list-check"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Projects in Planning Phase</span>
+                            <span class="info-box-number">@Model.PlanningProjects</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-indigo elevation-1"><i class="fa-solid fa-spinner"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Pending Projects</span>
+                            <span class="info-box-number">@Model.PendingProjects</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-warning elevation-1"><i class="fa-regular fa-clock"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Delayed Projects</span>
+                            <span class="info-box-number">@Model.DelayedProjects</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-danger elevation-1"><i class="fa-solid fa-ban"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Blocked Projects</span>
+                            <span class="info-box-number">@Model.BlockedProjects</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-success elevation-1"><i class="fa-solid fa-circle-check"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Completed Projects</span>
+                            <span class="info-box-number">@Model.CompletedProjects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="d-flex justify-content-between align-items-center">
+                Tasks Overview
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </h2>
+        </div>
+        <div class="card-body">
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info elevation-1"><i class="fa-solid fa-bars-progress"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Tasks</span>
+                            <span class="info-box-number">@Model.TotalTasks</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-teal elevation-1"><i class="fa-solid fa-list-check"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Tasks in Planning Phase</span>
+                            <span class="info-box-number">@Model.PlanningTasks</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-indigo elevation-1"><i class="fa-solid fa-spinner"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Pending Tasks</span>
+                            <span class="info-box-number">@Model.PendingTasks</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-warning elevation-1"><i class="fa-regular fa-clock"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Delayed Tasks</span>
+                            <span class="info-box-number">@Model.DelayedTasks</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-danger elevation-1"><i class="fa-solid fa-ban"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Blocked Tasks</span>
+                            <span class="info-box-number">@Model.BlockedTasks</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-success elevation-1"><i class="fa-solid fa-circle-check"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Completed Tasks</span>
+                            <span class="info-box-number">@Model.CompletedTasks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <div class="row mt-4">
     <div class="col-md-6">
         <h2>Active Projects</h2>
-        <ul class="list-group">
-            @foreach (var project in Model.ActiveProjectsList)
-            {
-                <li class="list-group-item">@project.Name</li>
-            }
-        </ul>
+        <table id="dashboard2" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Start Date</th>
+                    <th>Person In Charge</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var project in Model.ActiveProjectsList)
+                {
+                    <tr>
+                        <td>@project.Name</td>
+                        <td>@project.Status</td>
+                        <td>@project.StartDate.ToShortDateString()</td>
+                        <td>@project.PIC</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
+
     <div class="col-md-6">
         <h2>Active Tasks</h2>
-        <ul class="list-group">
-            @foreach (var task in Model.ActiveTasksList)
-            {
-                <li class="list-group-item">@task.Title</li>
-            }
-        </ul>
+        <table id="dashboard3" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Start Date</th>
+                    <th>Assigned To</th>
+                    <th>Project</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var task in Model.ActiveTasksList)
+                {
+                    <tr>
+                        <td>@task.Title</td>
+                        <td>@task.Status</td>
+                        <td>@task.StartDate.ToShortDateString()</td>
+                        <td>@Model.TaskAssignments[task.Id]</td>
+                        <td>@task.Project.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>
 
-<div class="row mt-4">
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="d-flex justify-content-between align-items-center">
+                    Projects Performance
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </h2>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="text-center">
+                            <strong>Data Since: 1 Jan, 2024</strong>
+                        </p>
+
+                        <div class="chart">
+                            <!-- Project Chart Canvas -->
+                            <canvas id="projectStatusChart" height="180" style="height: 180px;"></canvas>
+                        </div>
+                        <!-- /.chart-responsive -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-4">
+                        <p class="text-center">
+                            <strong>Projects Progress</strong>
+                        </p>
+
+                        <div class="progress-group">
+                            Projects in Planning Phase
+                            <span class="float-right"><b>160</b>/200</span>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-primary" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <!-- /.progress-group -->
+
+                        <div class="progress-group">
+                            Pending Projects
+                            <span class="float-right"><b>310</b>/400</span>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-danger" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <!-- /.progress-group -->
+                        <div class="progress-group">
+                            <span class="progress-text">Delayed Projects</span>
+                            <span class="float-right"><b>480</b>/800</span>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-success" style="width: 60%"></div>
+                            </div>
+                        </div>
+
+                        <!-- /.progress-group -->
+                        <div class="progress-group">
+                            Blocked Projects
+                            <span class="float-right"><b>250</b>/500</span>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-warning" style="width: 50%"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-group">
+                            Completed Projects
+                            <span class="float-right"><b>250</b>/500</span>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-success" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <!-- /.progress-group -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- ./card-body -->
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-sm-3 col-6">
+                        <div class="description-block border-right">
+                            <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
+                            <h5 class="description-header">$35,210.43</h5>
+                            <span class="description-text">TOTAL REVENUE</span>
+                        </div>
+                        <!-- /.description-block -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-3 col-6">
+                        <div class="description-block border-right">
+                            <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
+                            <h5 class="description-header">$10,390.90</h5>
+                            <span class="description-text">TOTAL COST</span>
+                        </div>
+                        <!-- /.description-block -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-3 col-6">
+                        <div class="description-block border-right">
+                            <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
+                            <h5 class="description-header">$24,813.53</h5>
+                            <span class="description-text">TOTAL PROFIT</span>
+                        </div>
+                        <!-- /.description-block -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-3 col-6">
+                        <div class="description-block">
+                            <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
+                            <h5 class="description-header">1200</h5>
+                            <span class="description-text">GOAL COMPLETIONS</span>
+                        </div>
+                        <!-- /.description-block -->
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.card-footer -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.col -->
+</div>
+<!-- /.row -->
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var ctx = document.getElementById('projectStatusChart').getContext('2d');
+        var taskStatusChart = new Chart(ctx, {
+            type: 'doughnut', // You can also use 'line', 'pie', 'doughnut', etc.
+            data: {
+                labels: ['Planning', 'Pending', 'Delayed', 'Blocked', 'Completed'],
+                datasets: [{
+                    label: 'Number of Tasks',
+                    data: [
+                            @Model.PlanningProjects,
+                            @Model.PendingProjects,
+                            @Model.DelayedProjects,
+                            @Model.BlockedProjects,
+                            @Model.CompletedProjects
+                        ],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
+@* <div class="row mt-4">
     <div class="col-md-12">
         <h2>Team Members</h2>
-        <ul class="list-group">
-            @foreach (var member in Model.TeamMembers)
-            {
-                <li class="list-group-item">
-                    <strong>@member.UserName</strong>
-
-                    <ul class="list-group mt-2">
-                        <li class="list-group-item active">Projects:</li>
-                        @if (Model.TeamMembersProjects.ContainsKey(member) && Model.TeamMembersProjects[member].Any())
-                        {
-                            @foreach (var project in Model.TeamMembersProjects[member].Where(p => p.Status != ProjectStatus.Completed))
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Member Name</th>
+                    <th>Projects</th>
+                    <th>Tasks</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var member in Model.TeamMembers)
+                {
+                    <tr>
+                        <td><strong>@member.UserName</strong></td>
+                        <td>
+                            @if (Model.TeamMembersProjects.ContainsKey(member) && Model.TeamMembersProjects[member].Any())
                             {
-                                <li class="list-group-item">@project.Name</li>
+                                <ul class="list-group">
+                                    @foreach (var project in Model.TeamMembersProjects[member].Where(p => p.Status != ProjectStatus.Completed))
+                                    {
+                                        <p>@project.Name</p>
+                                    }
+                                </ul>
                             }
-                        }
-                        else
-                        {
-                            <li class="list-group-item">No projects assigned</li>
-                        }
-                    </ul>
-
-                    <ul class="list-group mt-2">
-                        <li class="list-group-item active">Tasks:</li>
-                        @if (Model.TeamMembersTasks.ContainsKey(member) && Model.TeamMembersTasks[member].Any())
-                        {
-                            @foreach (var task in Model.TeamMembersTasks[member].Where(t => t.Status != TaskTracker.TaskTrackerStatus.Completed.ToString()))
+                            else
                             {
-                                <li class="list-group-item">@task.Title (@task.Status)</li>
+                                <p>No projects assigned</p>
                             }
-                        }
-                        else
-                        {
-                            <li class="list-group-item">No tasks assigned</li>
-                        }
-                    </ul>
-                </li>
-            }
-        </ul>
+                        </td>
+                        <td>
+                            @if (Model.TeamMembersTasks.ContainsKey(member) && Model.TeamMembersTasks[member].Any())
+                            {
+                                <ul class="list-group">
+                                    @foreach (var task in Model.TeamMembersTasks[member].Where(t => t.Status != TaskTracker.TaskTrackerStatus.Completed.ToString()))
+                                    {
+                                        <p>@task.Title (@task.Status)</p>
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <p>No tasks assigned</p>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
-</div>
+</div> *@
+
 
