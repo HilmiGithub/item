@@ -16,6 +16,11 @@ public class DashboardController : Controller
 
     public async Task<IActionResult> Index()
     {
+        var activeTasks = await _context.TaskTrackers
+        .Include(t => t.Project) // Include the project data
+        .Where(t => t.Status == "Planning" || t.Status == "Pending" || t.Status == "Delayed" || t.Status == "Blocked")
+        .ToListAsync();
+
         var viewModel = new DashboardViewModel
         {
             
@@ -37,22 +42,33 @@ public class DashboardController : Controller
             ActiveTasksList = _context.TaskTrackers.Where(t => t.Status == "Planning" || t.Status == "Pending" || t.Status == "Delayed" || t.Status == "Blocked").ToList(),
 
             TeamMembersProjects = new Dictionary<Employee, List<Project>>(),
-            TeamMembersTasks = new Dictionary<Employee, List<TaskTracker>>()
+            TeamMembersTasks = new Dictionary<Employee, List<TaskTracker>>(),
+            TaskAssignments = new Dictionary<int, string>()
         };
+
+        var employees = await _context.Employees.ToListAsync();
+
+        foreach (var task in viewModel.ActiveTasksList)
+        {
+            var employee = employees.FirstOrDefault(e => e.Id == task.AssignedTo);
+            if (employee != null)
+            {
+                viewModel.TaskAssignments[task.Id] = employee.FullName;
+            }
+        }
 
         foreach (var member in viewModel.TeamMembers)
         {
-            // Get projects for each team member
             var projects = await _context.Project
-                .Where(p => p.Tasks.Any(t => t.AssignedTo == member.Id))
+                .Where(p => p.Tasks.Any(t => t.AssignedTo == member.Id) &&
+                            p.Status != ProjectStatus.Completed)
                 .ToListAsync();
 
-            // Get tasks for each team member
             var tasks = await _context.TaskTrackers
-                .Where(t => t.AssignedTo == member.Id)
+                .Where(t => t.AssignedTo == member.Id &&
+                            t.Status != TaskTracker.TaskTrackerStatus.Completed.ToString())
                 .ToListAsync();
 
-            // Add to the dictionaries
             viewModel.TeamMembersProjects.Add(member, projects);
             viewModel.TeamMembersTasks.Add(member, tasks);
         }
