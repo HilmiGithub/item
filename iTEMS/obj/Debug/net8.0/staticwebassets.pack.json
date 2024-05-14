@@ -17797,6 +17797,14 @@
       "PackagePath": "staticwebassets\\AdminLTE\\plugins\\uplot\\uPlot.min.css"
     },
     {
+      "Id": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\wwwroot\\Assets\\Innotech Logo.jpeg",
+      "PackagePath": "staticwebassets\\Assets\\Innotech Logo.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\wwwroot\\Assets\\User_Profile_Image.jpg",
+      "PackagePath": "staticwebassets\\Assets\\User_Profile_Image.jpg"
+    },
+    {
       "Id": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
