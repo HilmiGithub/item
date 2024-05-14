@@ -3,20 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\viewmodels\\notificationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\viewmodels\\notificationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\viewmodels\\notificationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\viewmodels\\notificationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\views\\tasktrackers\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -29,14 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\controllers\\tasktrackerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\controllers\\tasktrackerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,7 +90,59 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "iTEMS\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\appsettings.Development.json",
+              "RelativeToolTip": "iTEMS\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-14T02:11:04.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\appsettings.json",
+              "RelativeDocumentMoniker": "iTEMS\\appsettings.json",
+              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\appsettings.json",
+              "RelativeToolTip": "iTEMS\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-14T02:11:02.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Program.cs",
+              "RelativeDocumentMoniker": "iTEMS\\Program.cs",
+              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Program.cs",
+              "RelativeToolTip": "iTEMS\\Program.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAIwC8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T02:08:51.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "iTEMS\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "iTEMS\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAswFgAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T02:07:37.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "NotificationViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\ViewModels\\NotificationViewModel.cs",
               "RelativeDocumentMoniker": "iTEMS\\ViewModels\\NotificationViewModel.cs",
@@ -87,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "RolesController.cs",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Controllers\\RolesController.cs",
               "RelativeDocumentMoniker": "iTEMS\\Controllers\\RolesController.cs",
@@ -99,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "ProjectsController.cs",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Controllers\\ProjectsController.cs",
               "RelativeDocumentMoniker": "iTEMS\\Controllers\\ProjectsController.cs",
@@ -119,49 +187,51 @@
               "RelativeToolTip": "iTEMS\\Controllers\\EmployeesController.cs",
               "ViewState": "AQIAABkBAAAAAAAAAAAAAEEBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T08:02:37.165Z"
+              "WhenOpened": "2024-05-13T08:02:37.165Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "iTEMS\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Controllers\\HomeController.cs",
               "RelativeToolTip": "iTEMS\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAAAEEAAAAAAAAA",
+              "ViewState": "AQIAACUAAAAAAAAAAAAkwEEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T07:51:11.357Z"
+              "WhenOpened": "2024-05-13T07:51:11.357Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "NotificationsController.cs",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Controllers\\NotificationsController.cs",
               "RelativeDocumentMoniker": "iTEMS\\Controllers\\NotificationsController.cs",
-              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Controllers\\NotificationsController.cs*",
-              "RelativeToolTip": "iTEMS\\Controllers\\NotificationsController.cs*",
-              "ViewState": "AQIAAKYAAAAAAAAAAAAwwLgAAAAJAAAA",
+              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Controllers\\NotificationsController.cs",
+              "RelativeToolTip": "iTEMS\\Controllers\\NotificationsController.cs",
+              "ViewState": "AQIAALcAAAAAAAAAAAAkwMoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T07:36:02.68Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "iTEMS\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Views\\Shared\\_Layout.cshtml*",
-              "RelativeToolTip": "iTEMS\\Views\\Shared\\_Layout.cshtml*",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAEoAAAAdAAAA",
+              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "iTEMS\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAP0AAAAAAAAAAAAAABMBAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-02T09:17:28.52Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "TaskTrackersController.cs",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Controllers\\TaskTrackersController.cs",
               "RelativeDocumentMoniker": "iTEMS\\Controllers\\TaskTrackersController.cs",
@@ -173,20 +243,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Notification.cs",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Models\\Notification.cs",
               "RelativeDocumentMoniker": "iTEMS\\Models\\Notification.cs",
               "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Models\\Notification.cs",
               "RelativeToolTip": "iTEMS\\Models\\Notification.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-14T00:42:58.365Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "BaseController.cs",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Controllers\\BaseController.cs",
               "RelativeDocumentMoniker": "iTEMS\\Controllers\\BaseController.cs",
@@ -198,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Views\\TaskTrackers\\Create.cshtml",
               "RelativeDocumentMoniker": "iTEMS\\Views\\TaskTrackers\\Create.cshtml",
@@ -211,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Views\\Roles\\Edit.cshtml",
               "RelativeDocumentMoniker": "iTEMS\\Views\\Roles\\Edit.cshtml",
@@ -224,7 +294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "iTEMS\\Data\\ApplicationDbContext.cs",

@@ -7,11 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using iTEMS.Data;
 using iTEMS.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace iTEMS.Controllers
 {
+    [Authorize]
     public class NotificationsController : Controller
     {
+        
         private readonly ApplicationDbContext _context;
 
         public NotificationsController(ApplicationDbContext context)
@@ -183,5 +186,18 @@ namespace iTEMS.Controllers
         {
             return _context.Notifications.Any(e => e.Id == id);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> MarkAsOpened(int id)
+        {
+            var notification = await _context.Notifications.FindAsync(id);
+            if (notification != null && notification.UserName == User.Identity.Name)
+            {
+                notification.IsOpened = true;
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction("Index"); // Redirect to wherever you want the user to go after opening the notification
+        }
+
     }
 }

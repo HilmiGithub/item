@@ -58,12 +58,17 @@
                         </form>
                     </div>
                 </li>
+
+
+
+
+
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
-                        @if (ViewBag.Notifications != null && ViewBag.Notifications.Count > 0)
+                        @if (ViewBag.Notifications != null && ((List<Notification>)ViewBag.Notifications).Any(n => !n.IsOpened && n.UserName == User.Identity.Name))
                         {
-                            <span class="badge badge-warning navbar-badge">@* @ViewBag.Notifications.Count *@New</span>
+                            <span class="badge badge-warning navbar-badge">New</span>
                         }
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="max-height: 300px; overflow-y: auto;">
@@ -76,7 +81,7 @@
                                 // Check if the notification belongs to the current user
                                 if (notification.UserName == User.Identity.Name)
                                 {
-                                    <a href="TaskTrackers" class="dropdown-item" style="word-wrap: break-word; white-space: normal; overflow: hidden; text-overflow: ellipsis;">
+                                    <a href="TaskTrackers" class="dropdown-item" style="word-wrap: break-word; white-space: normal; overflow: hidden; text-overflow: ellipsis;" onclick="notificationClicked('@notification.Id')">
                                         <span class="float-left text-muted text-sm">@notification.Timestamp.ToString("MMM dd, yyyy")</span>
                                         <br />
                                         <i class="fas fa-envelope mr-2"></i> @notification.Message
@@ -91,6 +96,11 @@
                         @* <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a> *@
                     </div>
                 </li>
+
+
+
+
+
 
                 @if (User.Identity?.IsAuthenticated ?? false)
                 {
@@ -132,11 +142,6 @@
                         }
                     </div>
                 </div>
-
-
-
-
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -254,6 +259,29 @@
             });
         });
     </script>
+
+    <script>
+        function notificationClicked(notificationId) {
+            // Make an AJAX request to the server
+            $.ajax({
+                url: '/Notifications/MarkAsOpened',
+                type: 'POST',
+                data: { id: notificationId },
+                success: function (response) {
+                    // Handle success response if needed
+                    console.log("Notification marked as opened successfully!");
+                },
+                error: function (xhr, status, error) {
+                    // Handle error response if needed
+                    console.error(error);
+                }
+            });
+        }
+
+    </script>
+
+
+
 </body>
 </html>
 
