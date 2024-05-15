@@ -271,7 +271,7 @@
             $("#dashboard1").DataTable({
                 "responsive": true, "lengthChange": true, "autoWidth": true,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            }).buttons().container().appendTo('#dashboard1_wrapper .col-md-6:eq(0)');
             $('#dashboard2').DataTable({
                 "paging": false,
                 "lengthChange": true,
@@ -290,8 +290,18 @@
                 "autoWidth": true,
                 "responsive": true,
             });
+            $('#dashboard4').DataTable({
+                "paging": false,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                "responsive": true,
+            });
         });
     </script>
+
 
     <script>
         function notificationClicked(notificationId) {

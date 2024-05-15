@@ -47,6 +47,7 @@ public class DashboardController : Controller
         };
 
         var employees = await _context.Employees.ToListAsync();
+        
 
         foreach (var task in viewModel.ActiveTasksList)
         {
@@ -72,6 +73,25 @@ public class DashboardController : Controller
             viewModel.TeamMembersProjects.Add(member, projects);
             viewModel.TeamMembersTasks.Add(member, tasks);
         }
+
+
+        var projectTaskDetailsList = new List<ProjectTaskDetails>();
+
+        foreach (var project in viewModel.ActiveProjectsList)
+        {
+            var projectTaskDetails = new ProjectTaskDetails
+            {
+                Project = project,
+                Tasks = await _context.TaskTrackers
+                            .Where(t => t.ProjectId == project.Id)
+                            .ToListAsync()
+            };
+
+            projectTaskDetailsList.Add(projectTaskDetails);
+        }
+
+        viewModel.ProjectTaskDetailsList = projectTaskDetailsList;
+
 
 
         return View(viewModel);
