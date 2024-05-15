@@ -24,6 +24,7 @@ namespace iTEMS.ViewModels
         public Dictionary<Employee, List<Project>> TeamMembersProjects { get; set; }
         public Dictionary<Employee, List<TaskTracker>> TeamMembersTasks { get; set; }
         public Dictionary<int, string> TaskAssignments { get; set; } // Maps task IDs to employee full names
+        public List<ProjectTaskDetails> ProjectTaskDetailsList { get; set; }
 
 
         // Additional properties or collections as needed
