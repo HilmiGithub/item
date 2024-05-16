@@ -155,209 +155,253 @@
     </div>
 </div>
 
-@foreach (var projectTaskDetails in Model.ProjectTaskDetailsList)
-{
-    var totalTasks = projectTaskDetails.Tasks.Count();
-    var pendingTasks = projectTaskDetails.Tasks.Count(t => t.Status == "Pending");
-    var planningTasks = projectTaskDetails.Tasks.Count(t => t.Status == "Planning");
-    var delayedTasks = projectTaskDetails.Tasks.Count(t => t.Status == "Delayed");
-    var blockedTasks = projectTaskDetails.Tasks.Count(t => t.Status == "Blocked");
-    var completedTasks = projectTaskDetails.Tasks.Count(t => t.Status == "Completed");
-    var percentagePending = (double)pendingTasks / totalTasks * 100;
-    var percentagePlanning = (double)planningTasks / totalTasks * 100;
-    var percentageDelayed = (double)delayedTasks / totalTasks * 100;
-    var percentageBlocked = (double)blockedTasks / totalTasks * 100;
-    var percentageCompleted = (double)completedTasks / totalTasks * 100;
-    var completionRate = (double)completedTasks / totalTasks * 100;
-    var ongoingTasks = pendingTasks + delayedTasks + blockedTasks + planningTasks;
+<div class="container mt-5">
+    @foreach (var projectTaskDetails in Model.ProjectTaskDetailsList)
+    {
+        var totalTasks = projectTaskDetails.Tasks.Count();
+        var pendingTasks = projectTaskDetails.Tasks.Count(t => t.Status == "Pending");
+        var planningTasks = projectTaskDetails.Tasks.Count(t => t.Status == "Planning");
+        var delayedTasks = projectTaskDetails.Tasks.Count(t => t.Status == "Delayed");
+        var blockedTasks = projectTaskDetails.Tasks.Count(t => t.Status == "Blocked");
+        var completedTasks = projectTaskDetails.Tasks.Count(t => t.Status == "Completed");
+        var percentagePending = (double)pendingTasks / totalTasks * 100;
+        var percentagePlanning = (double)planningTasks / totalTasks * 100;
+        var percentageDelayed = (double)delayedTasks / totalTasks * 100;
+        var percentageBlocked = (double)blockedTasks / totalTasks * 100;
+        var percentageCompleted = (float)completedTasks / totalTasks * 100;
+        var completionRate = (double)completedTasks / totalTasks * 100;
+        string percentagePendingString = percentagePending.ToString("F2"); // Displays two decimal places
+        string percentagePlanningString = percentagePlanning.ToString("F2"); // Displays two decimal places
+        string percentageDelayedString = percentageDelayed.ToString("F2"); // Displays two decimal places
+        string percentageBlockedString = percentageBlocked.ToString("F2"); // Displays two decimal places
+        string percentageCompletedString = percentageCompleted.ToString("F2"); // Displays two decimal places
+        string completionRateString = completionRate.ToString("F2"); // Displays two decimal places
 
 
-    <div class="container mt-5">
-        <div class="card">
-            <div class="card-header">
-                <h2 class="d-flex justify-content-between align-items-center">
-                    @projectTaskDetails.Project.Name Performance
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                    </div>
-                </h2>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-8">
-                        <p class="text-center">
-                            <strong>Data Since: 1 Jan, 2024</strong>
-                        </p>
-                        <div class="card-body">
-                            <canvas id="@($"projectStatusChart_{projectTaskDetails.Project.Id}")" height="180" style="height: 180px;"></canvas>
+        var ongoingTasks = pendingTasks + delayedTasks + blockedTasks + planningTasks;
+
+
+
+        
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="d-flex justify-content-between align-items-center">
+                        <span>
+                            @projectTaskDetails.Project.Name
+                            @if (projectTaskDetails.Project.Status == ProjectStatus.Completed)
+                            {
+                                <span class="badge badge-success">COMPLETED</span>
+                            }
+                            else if (projectTaskDetails.Project.Status == ProjectStatus.Pending)
+                            {
+                                <span class="badge badge-secondary">PENDING</span>
+                            }
+                            else if (projectTaskDetails.Project.Status == ProjectStatus.Planning)
+                            {
+                                <span class="badge badge-info">PLANNING</span>
+                            }
+                            else if (projectTaskDetails.Project.Status == ProjectStatus.Delayed)
+                            {
+                                <span class="badge badge-warning">DELAYED</span>
+                            }
+                            else if (projectTaskDetails.Project.Status == ProjectStatus.Blocked)
+                            {
+                                <span class="badge badge-danger">BLOCKED</span>
+                            }
+                        </span>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
                         </div>
-                        <!-- /.chart-responsive -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-4">
-                        <p class="text-center">
-                            <strong>Project Progress</strong>
-                        </p>
+                    </h2>
 
-                        <!-- /.progress-group -->
 
-                        <div class="progress-group">
-                            <strong> Tasks in Planning Phase</strong>
-                            <span class="float-right"><b>@(percentagePlanning)%</span>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar bg-teal" style="width: @(percentagePlanning)%"></div>
-                            </div>
-                        </div>
-
-                        <div class="progress-group">
-                            Pending Tasks
-                            <span class="float-right"><b>@(percentagePending)%</span>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar bg-indigo" style="width: @(percentagePending)%"></div>
-                            </div>
-                        </div>
-
-                        <div class="progress-group">
-                            Delayed Tasks
-                            <span class="float-right"><b>@(percentageDelayed)%</span>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar bg-warning" style="width: @(percentageDelayed)%"></div>
-                            </div>
-                        </div>
-
-                        <div class="progress-group">
-                            Blocked Tasks
-                            <span class="float-right"><b>@(percentageBlocked)%</span>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar bg-danger" style="width: @(percentageBlocked)%"></div>
-                            </div>
-                        </div>
-
-                        <div class="progress-group">
-                            Completed Tasks
-                            <span class="float-right"><b>@(percentageCompleted)%</span>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar bg-success" style="width: @(percentageCompleted)%"></div>
-                            </div>
-                        </div>
-
-                        <!-- /.progress-group -->
-                    </div>
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
-            </div>
-            <!-- ./card-body -->
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-sm-3 col-6">
-                        <div class="description-block border-right">
-                            @* <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span> *@
-                            <h5 class="description-header">@ongoingTasks</h5>
-                            <div>
-                                <span class="description-text">TOTAL ACTIVE TASKS</span>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                        <p class="text-center">
+                            <strong>Project Start Date: </strong>
+                            <span><strong>@projectTaskDetails.Project.StartDate.ToString("dd - MMMMMMMMM - yyyy")</strong></span>
+                        </p>
+                        <p class="text-center">
+                            <strong>Person In Charge: </strong>
+                            <span><strong>@projectTaskDetails.Project.PIC</strong></span>
+                        </p>
+                            <div class="card-body">
+                                <canvas id="@($"projectStatusChart_{projectTaskDetails.Project.Id}")" height="180" style="height: 180px;"></canvas>
                             </div>
+                            <!-- /.chart-responsive -->
                         </div>
-                        <!-- /.description-block -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-3 col-6">
-                        <div class="description-block border-right">
-                            @* <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span> *@
-                            <h5 class="description-header">@completionRate%</h5>
-                            <div>
-                                <span class="description-text">TASKS COMPLETION RATE</span>
+                        <!-- /.col -->
+                        <div class="col-md-4">
+                            <p class="text-center">
+                                <strong>Project Progress</strong>
+                            </p>
+
+                            <!-- /.progress-group -->
+
+                            <div class="progress-group">
+                                <strong> Tasks in Planning Phase</strong>
+                                <span class="float-right"><b>@(percentagePlanningString)%</span>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-teal" style="width: @(percentagePlanning)%"></div>
+                                </div>
                             </div>
-                        </div>
-                        <!-- /.description-block -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-3 col-6">
-                        <div class="description-block border-right">
-                            @* <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span> *@
-                            <h5 class="description-header">@completedTasks</h5>
-                            <div>
-                                <span class="description-text">COMPLETED TASKS</span>
+
+                            <div class="progress-group">
+                                Pending Tasks
+                            <span class="float-right"><b>@(percentagePendingString)%</span>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-indigo" style="width: @(percentagePending)%"></div>
+                                </div>
                             </div>
-                        </div>
-                        <!-- /.description-block -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-3 col-6">
-                        <div class="description-block">
-                            @* Check project health based on completion rate *@
-                            @if (completionRate >= 80)
-                            {
-                                <span class="description-percentage text-success"><i class="fa-solid fa-face-smile-beam"></i></span>
-                            }
-                            else if (completionRate >= 40)
-                            {
-                                <span class="description-percentage text-warning"><i class="fa-solid fa-face-meh"></i></span>
-                            }
-                            else
-                            {
-                                <span class="description-percentage text-danger"><i class="fa-solid fa-face-frown"></i></span>
-                            }
-                            @* <h5 class="description-header">@completionRate%</h5> *@
-                            <div>
-                                <span class="description-text">PROJECT HEALTH</span>
+
+                            <div class="progress-group">
+                                Delayed Tasks
+                            <span class="float-right"><b>@(percentageDelayedString)%</span>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-warning" style="width: @(percentageDelayed)%"></div>
+                                </div>
                             </div>
+
+                            <div class="progress-group">
+                                Blocked Tasks
+                            <span class="float-right"><b>@(percentageBlockedString)%</span>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-danger" style="width: @(percentageBlocked)%"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-group">
+                                Completed Tasks
+                                <span class="float-right"><b>@(percentageCompletedString)%</span>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-success" style="width: @(percentageCompleted)%"></div>
+                                </div>
+                            </div>
+
+                            
+
+                            <!-- /.progress-group -->
                         </div>
-                        <!-- /.description-block -->
+                        <!-- /.col -->
                     </div>
+                    <!-- /.row -->
                 </div>
-                <!-- /.row -->
+                <!-- ./card-body -->
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-sm-3 col-6">
+                            <div class="description-block border-right">
+                                @* <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span> *@
+                                <h5 class="description-header">@ongoingTasks</h5>
+                                <div>
+                                    <span class="description-text">TOTAL ACTIVE TASKS</span>
+                                </div>
+                            </div>
+                            <!-- /.description-block -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-3 col-6">
+                            <div class="description-block border-right">
+                                @* <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span> *@
+                            <h5 class="description-header">@completionRateString%</h5>
+                                <div>
+                                    <span class="description-text">TASKS COMPLETION RATE</span>
+                                </div>
+                            </div>
+                            <!-- /.description-block -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-3 col-6">
+                            <div class="description-block border-right">
+                                @* <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span> *@
+                                <h5 class="description-header">@completedTasks</h5>
+                                <div>
+                                    <span class="description-text">COMPLETED TASKS</span>
+                                </div>
+                            </div>
+                            <!-- /.description-block -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-3 col-6">
+                            <div class="description-block">
+                                @* Check project health based on completion rate *@
+                                @if (completionRate >= 80)
+                                {
+                                    <span class="description-percentage text-success"><i class="fa-solid fa-face-smile-beam"></i></span>
+                                }
+                                else if (completionRate >= 40)
+                                {
+                                    <span class="description-percentage text-warning"><i class="fa-solid fa-face-meh"></i></span>
+                                }
+                                else
+                                {
+                                    <span class="description-percentage text-danger"><i class="fa-solid fa-face-frown"></i></span>
+                                }
+                                @* <h5 class="description-header">@completionRate%</h5> *@
+                                <div>
+                                    <span class="description-text">PROJECT HEALTH</span>
+                                </div>
+                            </div>
+                            <!-- /.description-block -->
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
             </div>
-        </div>
-    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var ctx_@projectTaskDetails.Project.Id = document.getElementById('@($"projectStatusChart_{projectTaskDetails.Project.Id}")').getContext('2d');
-            var taskStatusChart_@projectTaskDetails.Project.Id = new Chart(ctx_@projectTaskDetails.Project.Id, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Planning', 'Pending', 'Delayed', 'Blocked', 'Completed'],
-                    datasets: [{
-                        label: 'Number of Tasks',
-                        data: [
-        @projectTaskDetails.Tasks.Count(t => t.Status == "Planning"),
-        @projectTaskDetails.Tasks.Count(t => t.Status == "Pending"),
-        @projectTaskDetails.Tasks.Count(t => t.Status == "Delayed"),
-        @projectTaskDetails.Tasks.Count(t => t.Status == "Blocked"),
-        @projectTaskDetails.Tasks.Count(t => t.Status == "Completed")
-                                        ],
-                        backgroundColor: [
-                            'rgba(0, 128, 128, 1)',
-                            'rgba(75, 0, 130, 1)',
-                            'rgba(255, 165, 0, 1)',
-                            'rgba(255, 0, 0, 1)', // Danger color (red)
-                            'rgba(0, 128, 0, 1)' // Success color (green)
 
-                        ],
-                        borderColor: [
-                            'rgba(0, 128, 128, 1)',
-                            'rgba(75, 0, 130, 1)',
-                            'rgba(255, 165, 0, 1)',
-                            'rgba(255, 0, 0, 1)', // Danger color (red)
-                            'rgba(0, 128, 0, 1)' // Success color (green)
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var ctx_@projectTaskDetails.Project.Id = document.getElementById('@($"projectStatusChart_{projectTaskDetails.Project.Id}")').getContext('2d');
+                var taskStatusChart_@projectTaskDetails.Project.Id = new Chart(ctx_@projectTaskDetails.Project.Id, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Planning', 'Pending', 'Delayed', 'Blocked', 'Completed'],
+                        datasets: [{
+                            label: 'Number of Tasks',
+                            data: [
+            @projectTaskDetails.Tasks.Count(t => t.Status == "Planning"),
+            @projectTaskDetails.Tasks.Count(t => t.Status == "Pending"),
+            @projectTaskDetails.Tasks.Count(t => t.Status == "Delayed"),
+            @projectTaskDetails.Tasks.Count(t => t.Status == "Blocked"),
+            @projectTaskDetails.Tasks.Count(t => t.Status == "Completed")
+                                                    ],
+                            backgroundColor: [
+                                'rgba(0, 128, 128, 1)',
+                                'rgba(75, 0, 130, 1)',
+                                'rgba(255, 165, 0, 1)',
+                                'rgba(255, 0, 0, 1)', // Danger color (red)
+                                'rgba(0, 128, 0, 1)' // Success color (green)
+
+                            ],
+                            borderColor: [
+                                'rgba(0, 128, 128, 1)',
+                                'rgba(75, 0, 130, 1)',
+                                'rgba(255, 165, 0, 1)',
+                                'rgba(255, 0, 0, 1)', // Danger color (red)
+                                'rgba(0, 128, 0, 1)' // Success color (green)
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
                         }
                     }
-                }
+                });
             });
-        });
-    </script>
-}
+        </script>
+    }
+</div>
+
 @* <div class="card-body">
     <table id="example1" class="table table-bordered table-striped">
         <thead>
@@ -390,7 +434,7 @@
 
 <div class="row mt-4">
     <div class="col-md-6">
-        <h2>Active Projects</h2>
+        <h2>Projects Quickview</h2>
         <table id="dashboard2" class="table table-bordered table-striped">
             <thead>
                 <tr>

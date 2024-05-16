@@ -31,7 +31,7 @@ public class DashboardController : Controller
             DelayedProjects = _context.Project.Count(p => p.Status == ProjectStatus.Delayed),
             BlockedProjects = _context.Project.Count(p => p.Status == ProjectStatus.Blocked),
             CompletedProjects = _context.Project.Count(p => p.Status == ProjectStatus.Completed),
-            ActiveProjectsList = _context.Project.Where(p => p.Status == ProjectStatus.Planning || p.Status == ProjectStatus.Pending || p.Status == ProjectStatus.Delayed || p.Status == ProjectStatus.Blocked).ToList(),
+            ActiveProjectsList = _context.Project.Where(p => p.Status == ProjectStatus.Planning || p.Status == ProjectStatus.Pending || p.Status == ProjectStatus.Delayed || p.Status == ProjectStatus.Blocked || p.Status == ProjectStatus.Completed).ToList(),
             TeamMembers = _context.Employees.ToList(),
             TotalTasks = _context.TaskTrackers.Count(),
             PlanningTasks = _context.TaskTrackers.Count(t => t.Status == "Planning"),
