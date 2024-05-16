@@ -7,32 +7,32 @@
       "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\views\\tasktrackers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\views\\tasktrackers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\views\\projects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\views\\projects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\models\\projecttaskdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\models\\projecttaskdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\views\\tasktrackers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\views\\tasktrackers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\models\\tasktracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\models\\tasktracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|solutionrelative:items\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03BA44DC-389B-4DFA-A986-044B73534A1A}|iTEMS\\iTEMS.csproj|c:\\users\\arvindh\\documents\\github\\items\\items\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -58,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,31 +66,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DashboardViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\ViewModels\\DashboardViewModel.cs",
-              "RelativeDocumentMoniker": "iTEMS\\ViewModels\\DashboardViewModel.cs",
-              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\ViewModels\\DashboardViewModel.cs",
-              "RelativeToolTip": "iTEMS\\ViewModels\\DashboardViewModel.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAA8wBIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T06:45:39.157Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Models\\Employee.cs",
-              "RelativeDocumentMoniker": "iTEMS\\Models\\Employee.cs",
-              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Models\\Employee.cs",
-              "RelativeToolTip": "iTEMS\\Models\\Employee.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T06:44:46.194Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Views\\TaskTrackers\\Index.cshtml",
               "RelativeDocumentMoniker": "iTEMS\\Views\\TaskTrackers\\Index.cshtml",
@@ -102,7 +74,8 @@
               "RelativeToolTip": "iTEMS\\Views\\TaskTrackers\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-14T06:28:59.733Z"
+              "WhenOpened": "2024-05-14T06:28:59.733Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -112,7 +85,7 @@
               "RelativeDocumentMoniker": "iTEMS\\Views\\Dashboard\\Index.cshtml",
               "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Views\\Dashboard\\Index.cshtml*",
               "RelativeToolTip": "iTEMS\\Views\\Dashboard\\Index.cshtml*",
-              "ViewState": "AQIAAFUBAAAAAAAAAAAmwFABAAABAAAA",
+              "ViewState": "AQIAAJ0AAAAAAAAAAAAkwKsAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-14T04:53:30.451Z",
               "EditorCaption": ""
@@ -131,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "ProjectTaskDetails.cs",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Models\\ProjectTaskDetails.cs",
               "RelativeDocumentMoniker": "iTEMS\\Models\\ProjectTaskDetails.cs",
@@ -139,59 +112,77 @@
               "RelativeToolTip": "iTEMS\\Models\\ProjectTaskDetails.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T03:33:05.888Z"
+              "WhenOpened": "2024-05-15T03:33:05.888Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "iTEMS\\Controllers\\DashboardController.cs",
               "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Controllers\\DashboardController.cs",
               "RelativeToolTip": "iTEMS\\Controllers\\DashboardController.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAmwCQAAABVAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAcwBUAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T06:46:13.518Z"
+              "WhenOpened": "2024-05-14T06:46:13.518Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Views\\Projects\\Index.cshtml",
-              "RelativeDocumentMoniker": "iTEMS\\Views\\Projects\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Views\\Projects\\Index.cshtml",
-              "RelativeToolTip": "iTEMS\\Views\\Projects\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-15T04:18:28.256Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "iTEMS\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "iTEMS\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAAAA0BAAAXAAAA",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEsAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-02T09:17:28.52Z"
+              "WhenOpened": "2024-05-02T09:17:28.52Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "Project.cs",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Models\\Project.cs",
               "RelativeDocumentMoniker": "iTEMS\\Models\\Project.cs",
               "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Models\\Project.cs",
               "RelativeToolTip": "iTEMS\\Models\\Project.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAqwBkAAAAxAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAA9wCIAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T02:50:54.173Z"
+              "WhenOpened": "2024-05-14T02:50:54.173Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 4,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\ViewModels\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "iTEMS\\ViewModels\\DashboardViewModel.cs",
+              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\ViewModels\\DashboardViewModel.cs",
+              "RelativeToolTip": "iTEMS\\ViewModels\\DashboardViewModel.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAA0wBMAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T06:45:39.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "iTEMS\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\Models\\Employee.cs",
+              "RelativeToolTip": "iTEMS\\Models\\Employee.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T06:44:46.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\Arvindh\\Documents\\GitHub\\iTEMS\\iTEMS\\appsettings.Development.json",
               "RelativeDocumentMoniker": "iTEMS\\appsettings.Development.json",
